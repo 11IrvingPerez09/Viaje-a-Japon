@@ -1,0 +1,132 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¡Feliz Cumple Ale! 🎌</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="main-title">¡Feliz Cumple, Ale! ✨</h1>
+
+    <section class="card japan-section">
+      <img src="penguin.png" alt="Pingüino feliz" class="penguin-img" />
+      <div class="content">
+        <h2 class="title">🌸 Recuerdos de tu viaje a Japón</h2>
+        <h2 class="desc"> Viviste una nueva experiencia en la que conociste un nuevo pais, sus costumbres y su cultura.
+          me alegra que hayas cumplido uno de tus sueños.💖 
+        </h2>
+          <h2 class="desc"> Espero que regreses pronto por nuevas anécdotas (que no sean perderte porfavor) y a seguir cumpliento tus sueños💖</h2>
+      
+  
+      </div>
+    </section>
+
+    <section class="trip-gallery">
+      <h2 class="gallery-title">Fotos del viaje 🌍</h2>
+      <div class="gallery-container">
+        <img src="Imagenes viaje/IMG-20250606-WA0036.jpg" alt="Foto del viaje 1" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0039.jpg" alt="Foto del viaje 2" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0040.jpg" alt="Foto del viaje 3" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0044.jpg" alt="Foto del viaje 4" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0045.jpg" alt="Foto del viaje 5" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0047.jpg" alt="Foto del viaje 6" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0049.jpg" alt="Foto del viaje 7" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0054.jpg" alt="Foto del viaje 8" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0056.jpg" alt="Foto del viaje 9" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0057.jpg" alt="Foto del viaje 10" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0058.jpg" alt="Foto del viaje 11" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0061.jpg" alt="Foto del viaje 12" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0062.jpg" alt="Foto del viaje 13" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0063.jpg" alt="Foto del viaje 14" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0065.jpg" alt="Foto del viaje 15" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0066.jpg" alt="Foto del viaje 16" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0067.jpg" alt="Foto del viaje 17" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0068.jpg" alt="Foto del viaje 18" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0069.jpg" alt="Foto del viaje 19" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0070.jpg" alt="Foto del viaje 20" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0071.jpg" alt="Foto del viaje 21" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0072.jpg" alt="Foto del viaje 22" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0073.jpg" alt="Foto del viaje 23" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0074.jpg" alt="Foto del viaje 24" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0075.jpg" alt="Foto del viaje 25" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0076.jpg" alt="Foto del viaje 26" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0077.jpg" alt="Foto del viaje 27" class="trip-image" />
+        <img src="Imagenes viaje/IMG-20250606-WA0078.jpg" alt="Foto del viaje 28" class="trip-image" />
+      </div>
+    </section>
+
+
+
+    <div class="footer-message">
+      <p> Te quiero mucho 🌟
+        <br> Eres una persona increíble y muy linda, jamas dejes que nadie te diga lo contrario
+  
+      </p>
+       
+      <p>— Att: Irving P.💖</p>
+    </div>
+  </div>
+
+  <div class="harry-floating"></div>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.right-btn');
+    const prevButton = document.querySelector('.left-btn');
+    const slideWidth = slides[0].getBoundingClientRect().width;
+
+    // Arrange the slides next to one another
+    const setSlidePosition = (slide, index) => {
+      slide.style.left = slideWidth * index + 'px';
+    };
+    slides.forEach(setSlidePosition);
+
+    let currentIndex = 0;
+
+    const moveToSlide = (track, currentSlide, targetSlide, direction) => {
+      track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+
+      // Rotation effect
+      if (direction === 'left') {
+        currentSlide.style.transform = 'rotateY(20deg)';
+        targetSlide.style.transform = 'rotateY(0deg)';
+      } else if (direction === 'right') {
+        currentSlide.style.transform = 'rotateY(-20deg)';
+        targetSlide.style.transform = 'rotateY(0deg)';
+      }
+
+      currentSlide.classList.remove('current-slide');
+      targetSlide.classList.add('current-slide');
+    };
+
+    nextButton.addEventListener('click', e => {
+      if (currentIndex < slides.length - 2) {
+        const currentSlide = slides[currentIndex];
+        const nextSlide = slides[currentIndex + 1];
+        moveToSlide(track, currentSlide, nextSlide, 'right');
+        currentIndex++;
+      }
+    });
+
+    prevButton.addEventListener('click', e => {
+      if (currentIndex > 0) {
+        const currentSlide = slides[currentIndex];
+        const prevSlide = slides[currentIndex - 1];
+        moveToSlide(track, currentSlide, prevSlide, 'left');
+        currentIndex--;
+      }
+    });
+
+    // Initialize first slide as current
+    slides[0].classList.add('current-slide');
+  </script>
+
+  <div class="harry-floating"></div>
+</body>
+</html>
